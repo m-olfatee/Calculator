@@ -1,6 +1,6 @@
 var num1 = 0;
 var num2 = 0;
-var operator;
+var operator = null;
 var decimalPoint = true;
 var stringIndexBegin = 0;
 var stringIndexEnd = 0;
