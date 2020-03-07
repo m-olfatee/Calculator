@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div id="calculator">
+        <div class="top">
+            <div id="input">0</div>
+            <div id="result">0</div>
+            <input type="button" value="C" class="clear" onclick="clearData()">
+        </div>
+
+
+
+        <div class="keys">
+            <input type="button" value="7" onclick="numberPress(7)">
+            <input type="button" value="8" onclick="numberPress(8)">
+            <input type="button" value="9" onclick="numberPress(9)">
+            <input type="button" value="&divide;" onclick="operatorPress('/')">
+            <input type="button" value="4" onclick="numberPress(4)">
+            <input type="button" value="5" onclick="numberPress(5)">
+            <input type="button" value="6" onclick="numberPress(6)">
+            <input type="button" value="&times;" onclick="operatorPress('*')">
+            <input type="button" value="1" onclick="numberPress(1)">
+            <input type="button" value="2" onclick="numberPress(2)">
+            <input type="button" value="3" onclick="numberPress(3)">
+            <input type="button" value="+" onclick="operatorPress('+')">
+            <input type="button" value="0" onclick="numberPress(0)">
+            <input type="button" value="." onclick="numberPress('.')">
+            <input type="button" value="=" onclick="finalResult()">
+            <input type="button" value="-" onclick="operatorPress('-')">
+
+        </div>
+    </div>
+
+
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
