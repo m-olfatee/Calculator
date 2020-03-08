@@ -1,96 +1,96 @@
-var num1 = 0;
-var num2 = 0;
-var operator = null;
-var decimalPoint = true;
-var stringIndexBegin = 0;
-var stringIndexEnd = 0;
-var operatorRepeat = true;
-var finalResultFlag = true;
+var num1 = 0 ;
+var num2 = 0 ;
+var operator = null ;
+var decimalPoint = true ;
+var stringIndexBegin = 0 ;
+var stringIndexEnd = 0 ;
+var operatorRepeat = true ;
+var finalResultFlag = true ;
 
 function numberPress(numberPressed) {
-    if (finalResultFlag != true) {
-        clearData();
+    if (finalResultFlag !== true) {
+        clearData() ;
     }
-    var numberInput = document.getElementById("input").innerText;
-    operatorRepeat = true;
-    if (numberPressed == "." && decimalPoint == true) {
-        decimalPoint = false;
+    var numberInput = document.getElementById("input").innerText ;
+    operatorRepeat = true ;
+    if (numberPressed == "." && decimalPoint === true) {
+        decimalPoint = false ;
         if (numberInput == "0") {
-            document.getElementById("input").innerText = "0" + numberPressed;
+            document.getElementById("input").innerText = "0" + numberPressed ;
         } else {
-            numberInput = numberInput + numberPressed;
-            document.getElementById("input").innerHTML = numberInput;
+            numberInput = numberInput + numberPressed ;
+            document.getElementById("input").innerHTML = numberInput ;
         }
-    } else if (numberPressed == "." && decimalPoint == false) {
-        numberInput = document.getElementById("input").innerText;
-        document.getElementById("input").innerHTML = numberInput;
+    } else if (numberPressed == "." && decimalPoint === false) {
+        numberInput = document.getElementById("input").innerText ;
+        document.getElementById("input").innerHTML = numberInput ;
     } else if (numberPressed != ".") {
         if (numberInput == "0") {
-            document.getElementById("input").innerText = numberPressed;
+            document.getElementById("input").innerText = numberPressed ;
         } else {
-            numberInput = numberInput + numberPressed;
-            document.getElementById("input").innerHTML = numberInput;
+            numberInput = numberInput + numberPressed ;
+            document.getElementById("input").innerHTML = numberInput ;
         }
     }
 }
 
 function operatorPress(operatorPressed) {
-    if (finalResultFlag != true) {
+    if (finalResultFlag !== true) {
         clearData();
     }
-    var numberInput = document.getElementById("input").innerText;
-    if (stringIndexEnd == 0 && operatorRepeat == true) {
-        decimalPoint = true;
-        operatorRepeat = false;
-        num1 = numberInput;
-        stringIndexEnd = num1.length;
-        operator = operatorPressed;
-        numberInput = numberInput + operatorPressed;
-        document.getElementById("input").innerHTML = numberInput;
-    } else if (stringIndexEnd != 0 && operatorRepeat == true) {
-        decimalPoint = true;
-        operatorRepeat = false;
-        stringIndexBegin = stringIndexEnd;
-        stringIndexEnd = numberInput.length;
-        num2 = numberInput.slice(stringIndexBegin + 1);
-        numberInput = numberInput + operatorPressed;
-        document.getElementById("input").innerHTML = numberInput;
-        calculate(num1, num2);
-        num1 = num2;
-        operator = operatorPressed;
-        stringIndexBegin = stringIndexEnd - stringIndexBegin;
+    var numberInput = document.getElementById("input").innerText ;
+    if (stringIndexEnd === 0 && operatorRepeat === true) {
+        decimalPoint = true ;
+        operatorRepeat = false ;
+        num1 = numberInput ;
+        stringIndexEnd = num1.length ;
+        operator = operatorPressed ;
+        numberInput = numberInput + operatorPressed ;
+        document.getElementById("input").innerHTML = numberInput ;
+    } else if (stringIndexEnd !== 0 && operatorRepeat === true) {
+        decimalPoint = true ;
+        operatorRepeat = false ;
+        stringIndexBegin = stringIndexEnd ;
+        stringIndexEnd = numberInput.length ;
+        num2 = numberInput.slice(stringIndexBegin + 1) ;
+        numberInput = numberInput + operatorPressed ;
+        document.getElementById("input").innerHTML = numberInput ;
+        calculate(num1, num2) ;
+        num1 = num2 ;
+        operator = operatorPressed ;
+        stringIndexBegin = stringIndexEnd - stringIndexBegin ;
     }
 }
 
 function calculate(firstNumber, secondNumber) {
-    var result = document.getElementById("result").innerText;
+    var result = document.getElementById("result").innerText ;
     if (result == "0") {
         if (operator == "+") {
-            let finalResult = parseFloat(firstNumber) + parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(firstNumber) + parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "-") {
-            finalResult = parseFloat(firstNumber) - parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(firstNumber) - parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "*") {
-            finalResult = parseFloat(firstNumber) * parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(firstNumber) * parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "/") {
-            finalResult = parseFloat(firstNumber) / parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(firstNumber) / parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         }
     } else {
         if (operator == "+") {
-            let finalResult = parseFloat(result) + parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(result) + parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "-") {
-            let finalResult = parseFloat(result) - parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(result) - parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "*") {
-            let finalResult = parseFloat(result) * parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(result) * parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         } else if (operator == "/") {
-            let finalResult = parseFloat(result) / parseFloat(secondNumber);
-            document.getElementById("result").innerHTML = finalResult;
+            let fResult = parseFloat(result) / parseFloat(secondNumber) ;
+            document.getElementById("result").innerHTML = fResult ;
         }
     }
 }
