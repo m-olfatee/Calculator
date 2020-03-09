@@ -36,7 +36,8 @@ function numberPress(numberPressed) {
 
 function operatorPress(operatorPressed) {
     if (finalResultFlag !== true) {
-        clearData();
+        document.getElementById("input").innerText = document.getElementById("result").innerText ;
+        finalResultFlag = true ;
     }
     var numberInput = document.getElementById("input").innerText ;
     if (stringIndexEnd === 0 && operatorRepeat === true) {

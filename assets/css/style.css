@@ -1,6 +1,5 @@
 * {
     box-sizing:border-box;
-    font-size: 24px;
     font-size:2vw;
     font-weight: 300;
     margin:0;
@@ -37,7 +36,9 @@ html {
     width: 95%;
 }
 .keys,.top {
-    overflow:scroll;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
 }
 
 .keys input:hover, .top input:hover {
